@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<style>
+
+@font-face
+{
+    font-family: old;
+    src: url('font/gbb.ttf'); 
+}
+
+
+html 
+{
+   font-family: old;
+}
+
+
+
+body
+{  
+    background-color: black;
+}
+
+.menu-item{ 
+    color:  black;
+    font-size: 1.2em;
+    margin-left: 6%;
+    margin-top: 0.3%;
+    white-space:nowrap;
+    overflow:hidden;
+    width: 100%;
+}
+#title{ 
+    float:center;
+    font-size: 2em;
+    color: black;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    vertical-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#btnA{
+    position: relative;
+    top:145px;
+    left:440px;
+    background-color: transparent;
+    height:40px;
+    padding: 25px;
+    border-radius: 58px;
+    border: none;
+    cursor: pointer;
+}
+#btnB{    
+    position: relative;
+    top:175px;
+    left:300px;
+    background-color: transparent;
+    height:50px;
+    padding: 29px;
+    border-radius: 58px;
+    border: none;
+    cursor: pointer;
+}
+#btnSel{
+    position: relative;
+    top:280px;
+    left:80px;
+    background-color: transparent;
+    height:40px;
+    padding: 30px;
+    border: none;
+    cursor: pointer;
+}
+#btnStart{
+    position: relative;
+    top:280px;
+    left:95px;
+    background-color: transparent;
+    height:40px;
+    padding: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+#container{
+    /*border: solid 2px white;*/
+    margin-top: 110px;
+    float:left;
+    height: 230px;
+    width: 250px;
+    margin-left: 170px;
+    position: relative;
+    overflow: hidden;
+}
+#gameboy{
+    background: url(images/gameb.png) no-repeat center center;
+    background-size: 80%;
+    width: 600px;
+    min-height: 800px;
+    margin:0 auto;
+}
+#buttons
+{
+    float: left;
+    width: 100%;
+    height: 400px;
+}
+#movable{
+    position: absolute;
+    top:250px;
+}
+
+a{
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+}
+</style>
+<script>
+$( document ).ready(function() {
+    $('#movable').animate({top:0},3000,function(){});
+});
+
+</script>
+</head>
+<!-- AGENDA
+    1) capture image
+    2) embed youtube
+    3) animation on main menu
+
+ 1 News,2 Videos sotto categoira trailer e chapters, Contacts -->
+<body>  
+        <div id="gameboy">      
+            <div id="container"> 
+                <div id="movable">
+                <div id="title">NITECUT</div>
+                    <a href="about.html"><h1 class="menu-item">PRESS A --> ABOUT US</h1></a>
+                    <a href="tappe.html"><h1 class="menu-item">PRESS B --> TOUR</h1></a>
+                    <a href="news.htm"><h1 class="menu-item">PRESS START --> NEWS </h1></a>
+                    <a href="synth.html"><h1 class="menu-item">PRESS SELECT --> SYNTH </h1></a>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+            <div id="buttons">
+                <button id="btnA" onclick="window.location='about.html'"></button>
+                <button id="btnB" onclick="window.location='tappe.html'"></button>
+                <button id="btnSel" onclick="window.location='synth.html'"></button>
+                <button id="btnStart" onclick="window.location='news.htm'"></button>
+            </div>
+        </div>
+</body>
+</html>

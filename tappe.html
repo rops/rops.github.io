@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="popup/css/default.css" />
+        <link rel="stylesheet" type="text/css" href="popup/css/component.css" />
+        <script src="popup/js/modernizr.custom.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<style>
+
+
+@font-face
+{
+    font-family: old;
+    src: url('font/old.ttf'); 
+}
+html{
+    height: 100%;
+}
+
+body {  background-color: black;
+        font-family: old ;
+        height:100%;
+         
+}
+#title{ 
+    color:  yellow;
+    font-size:500%;
+    border-right: .1em solid black;    
+    margin:0 auto;
+    text-align: center;
+    padding: 0;
+}
+
+#img_3{
+    margin-top: 30px;
+    border: solid 3px white;
+    width: 10%;
+    margin-left: 50px;
+    padding: 0;
+}
+#img_4{
+    margin-top: 30px;
+    border: solid 3px white;
+    width: 10%;
+    margin-right: 50px;
+    padding: 0;
+}
+#home{ 
+    color:  yellow;
+    font-size:150%;
+    margin-bottom: 3%;
+    margin-top: 2%;
+    text-align: center;
+    padding: 0;
+    
+}
+
+#map{
+    margin-top: 30px;
+    border: solid 15px red;
+    background: url('images/europa.png') center center;
+    background-size: 100%;
+    width: 1200px;
+    /*height:100%;*/
+    min-height:800px;
+    margin: 0 auto;
+}
+.tappa-button
+{
+    position: relative;
+    background-color: rgb(1,154,255);
+    border:solid 4px red;
+    float: left;
+    clear: both;
+    font-family: old ;
+}
+.tappa-button:hover{
+    background-color: blue;
+}
+.md-close{
+ font-family: old ;   
+}
+</style>
+
+<script>
+$( document ).ready(function(index) {
+    $('.tappa-button').each(function(){
+      topOff = $(this).data('topoffset');
+      leftOff = $(this).data('leftoffset');
+      $(this).css({top:topOff+'px',left:leftOff+'px',zindex:index});  
+    })
+    $('.tappa-button').each(function(){
+        $(this).click(function(){
+            url = $(this).data('youtubeurl');
+            title = $(this).data('popuptitle');
+            $('.md-content').html('<h3>'+title+'</h3><div><iframe width="853" height="480" src="http://www.youtube.com/embed/'+url+'?rel=0" frameborder="0" allowfullscreen></iframe></div>')
+        })
+    });
+});
+
+</script>
+</head>
+
+<body> 
+        <div id="title"><img id="img_4" src="images/city2.png">tour<img id="img_3" src="images/city2.png"></div>
+        <div id="map">
+           
+
+            <button class="md-trigger tappa-button" data-topoffset="300" data-leftoffset="350" data-modal="popupYoutube" data-popuptitle="Bruxelles" data-youtubeurl="WI3EqKLjW_A">Bruxelles</button>
+
+            <button class="md-trigger tappa-button" data-topoffset="330" data-leftoffset="500" data-modal="popupYoutube" data-popuptitle="Munich" data-youtubeurl="wcfc-yd7TRY">Munich</button>
+            
+        </div>
+        </h1> <a href="home.htm"><h1 id="home">Home</h1></a>
+
+        <div class="md-modal md-effect-1" id="popupYoutube">
+            <div class="md-content">
+                
+            </div>
+            <button class="md-close">Close me!</button>
+        </div>
+        <div class="md-overlay"></div><!-- the overlay element -->
+
+        <!-- classie.js by @desandro: https://github.com/desandro/classie -->
+        <script src="popup/js/classie.js"></script>
+        <script src="popup/js/modalEffects.js"></script>
+
+        <!-- for the blur effect -->
+        <!-- by @derSchepp https://github.com/Schepp/CSS-Filters-Polyfill -->
+        <script>
+            // this is important for IEs
+            var polyfilter_scriptpath = 'popup/js/';
+        </script>
+        <script src="popup/js/cssParser.js"></script>
+        <script src="popup/js/css-filters-polyfill.js"></script>
+
+</html>
