@@ -2,6 +2,9 @@
 <html lang="en" class="no-js">
 <head>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<link rel="icon" 
+      type="image/png" 
+      href="favicon.ico">
 <style>
 
 @font-face
@@ -103,6 +106,7 @@ body
     width: 600px;
     min-height: 800px;
     margin:0 auto;
+
 }
 #buttons
 {
@@ -121,10 +125,23 @@ a{
 a:visited{
     text-decoration: none;
 }
+#links{
+   position: absolute;
+   top:10px;
+   /*right: 20%; */
+   left:70%;
+
+}
+#links a{
+    margin-right: 10px;
+}
 </style>
 <script>
 $( document ).ready(function() {
     $('#movable').animate({top:0},3000,function(){});
+});
+$( window ).resize(function() {
+
 });
 
 </script>
@@ -135,7 +152,12 @@ $( document ).ready(function() {
     3) animation on main menu
 
  1 News,2 Videos sotto categoira trailer e chapters, Contacts -->
-<body>  
+<body> 
+        <div id="links">
+            <a href="https://www.facebook.com/nitecut" target="blank"><img width="40px" src="images/fb8bit.png"></a>
+            <a href="http://www.youtube.com/user/NITECUT" target="blank"><img width="100px" src="images/youtube.png"></a>
+            <a href="mailto:nitecut@gmail.com" target="blank"><img width="40px" src="images/mail.png"></a>
+        </div>
         <div id="gameboy">      
             <div id="container"> 
                 <div id="movable">
@@ -154,5 +176,6 @@ $( document ).ready(function() {
                 <button id="btnStart" onclick="window.location='news.htm'"></button>
             </div>
         </div>
+        
 </body>
 </html>
