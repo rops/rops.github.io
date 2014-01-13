@@ -109,7 +109,8 @@ $( document ).ready(function(index) {
         $(this).click(function(){
             url = $(this).data('youtubeurl');
             title = $(this).data('popuptitle');
-            $('.md-content').html('<h3>'+title+'</h3><div><iframe width="853" height="480" src="http://www.youtube.com/embed/'+url+'?rel=0" frameborder="0" allowfullscreen></iframe></div>')
+            content = '<h3>'+title+'</h3><div><object width="853" height="480"><param name="movie" value="http://www.youtube.com/v/'+url+'?hl=en_US&amp;version=3&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/'+url+'?hl=en_US&amp;version=3&amp;rel=0" type="application/x-shockwave-flash" width="853" height="480" allowscriptaccess="always" allowfullscreen="true"></embed></object></div>';
+            $('#youtube-content').html(content);
         })
     });
 });
@@ -130,8 +131,8 @@ $( document ).ready(function(index) {
         </h1> <a href="index.html"><h1 id="home">Home</h1></a>
 
         <div class="md-modal md-effect-1" id="popupYoutube">
-            <div class="md-content">
-                
+            <div class="md-content" id="youtube-content">
+                xxx
             </div>
             <button class="md-close">Close me!</button>
         </div>
